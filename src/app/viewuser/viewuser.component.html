@@ -1,0 +1,82 @@
+
+
+
+<div class="col-lg-6 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+    <div class="order_session" style="margin: 12px 0;margin: 12px 0;">
+      <a style="    padding: 11px 6px;
+      margin: 10px 5px 10px 0;
+      margin-left: 3%;
+       " class="btn btn-primary"
+        (click)="openDialog()">Add User</a>
+   
+    </div>
+
+  </div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+   
+  
+  
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element">{{element.name}} </td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="mobilenumber">
+      <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.mobilenumber}} </td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="State">
+      <th mat-header-cell *matHeaderCellDef> State </th>
+      <td mat-cell *matCellDef="let element"> {{element.State}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="district">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.district}} </td>
+      </ng-container>
+      <!-- <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Edit </mat-header-cell>
+        <mat-cell *matCellDef="let element"> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
+            color="primary" (click)="edit(element)">
+            <mat-icon>edit</mat-icon>
+          </button> </mat-cell>
+      </ng-container> -->
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
+        <td mat-cell *matCellDef="let element"> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
+            color="primary" (click)="edit(element)" >
+            <mat-icon>edit</mat-icon>
+          </button> </td>
+      </ng-container>
+      <!-- <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let element"> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"
+            (click)="delete(element.id)" color="warn">
+            <mat-icon>delete</mat-icon>
+          </button> </mat-cell>
+      </ng-container> -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+        <td mat-cell *matCellDef="let element"> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"
+            (click)="delete(element._id)" color="warn" queryParams="{ id: element._id }">
+            <mat-icon>delete</mat-icon>
+          </button> </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
+  

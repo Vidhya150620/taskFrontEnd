@@ -1,0 +1,137 @@
+<div class="container-fluid">
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;"> User Details</h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="adduserForm">
+
+                            <div class="row">
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage"> Name: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="name" min="1" step="1"
+                                        ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 17px;
+                                    margin-top: -11px;" *ngIf="formsubmited && adduserForm.get('name')?.invalid">Enter
+                                        the Name</span>
+                                </div>
+
+
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Email: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="email" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 13px;
+                                    margin-top: -11px;" *ngIf="formsubmited && adduserForm.get('email')?.invalid">Enter
+                                        the Email</span>
+                                </div>
+
+
+
+
+
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Mobile Number: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="mobilenumber"
+                                        onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"
+                                        pattern="[6789][0-9]{9}" maxlength="10">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 44px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && adduserForm.get('mobilenumber')?.invalid">Enter
+                                        the MobileNumber</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage"> Address<span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="address" min="1" step="1" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 24px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && adduserForm.get('address')?.invalid">Enter
+                                        the address</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="countries">Country<span class="required">*</span></label>
+                                    <select (change)="selectstate($event)" formControlName="countries">
+
+                                        <option [ngValue]="null" disabled selected>Select Country</option>
+                                        <option value={{data.isoCode}} *ngFor="let data of countries">{{data.name}}
+                                        </option>
+                                    </select>
+
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center; margin-left: 16px;
+                                                        padding-bottom: 15px;"
+                                        *ngIf="formsubmited && adduserForm.get('countries')?.invalid">Select
+                                        Country</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="State">State<span class="required">*</span></label>
+                                    <select formControlName="State" (change)="selectcity($event)">
+
+                                        <option [ngValue]="null" disabled selected>Select State</option>
+                                        <option value={{data.isoCode}} *ngFor="let data of state">{{data.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center; margin-left: 16px;
+                                                        padding-bottom: 15px;"
+                                        *ngIf="formsubmited && adduserForm.get('State')?.invalid">Select State</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="District">City<span class="required">*</span></label>
+                                    <select formControlName="district">
+
+                                        <option [ngValue]="null" disabled selected>Select City</option>
+                                        <option value={{data.name}} *ngFor="let data of city">{{data.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;text-align:center; margin-left: 16px;
+                                                        padding-bottom: 15px;"
+                                        *ngIf="formsubmited && adduserForm.get('district')?.invalid">Select
+                                        City</span>
+                                </div>
+
+
+
+
+
+                                <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                    class="btn btn-primary" (click)="submit()">{{action}}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

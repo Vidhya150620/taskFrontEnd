@@ -1,0 +1,95 @@
+
+<div class="container-fluid" >
+    <div class="row" style="margin: 0px">
+        <div class="col-12">
+            <h4 style="text-align: center; font-size: 19px; margin-top: 10px;    color: #a70a0a;">User Registration </h4>
+        </div>
+
+
+        <div class="tab-content" style="margin: 0; padding: 0px">
+            <div #page1 id="menu0" class="container tab-pane active">
+                <br />
+                <div class="col-12">
+                    <div class="form_controller">
+                        <form [formGroup]="Registration">
+                            <!-- <p class="form-label error-message" *ngIf="displayMsg" for="form3Example4"
+                            style="color: rgb(23, 16, 214);
+                             margin-left: 75px;">Link Sent Your Email !! Please Check !!</p>
+                               <p class="form-label error-message" *ngIf="isdisplay" for="form3Example4"
+                               style="color:red;
+                                margin-left: 75px;">Email Already Taken</p> -->
+                            <div class="row">
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage"> User Name: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="username" min="1" step="1"
+                                        ng-pattern="/^[a-zA-Z\s]*$/" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 46px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && Registration.get('username')?.invalid">Enter
+                                        the username</span>
+                                </div>
+
+                             
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Email: <span class="required">*</span></label>
+                                    <input type="text" id="categoryImage" formControlName="email" />
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style=" color: red;
+                                    text-align: center;
+                                    margin-left: 13px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && Registration.get('email')?.invalid">Enter
+                                        the Email</span>
+                                </div>
+
+                              
+
+                                 <!-- password -->
+                                 <div class="form_singlerow">
+                                    <label for="categoryImage">Password: <span class="required">*</span></label>
+                                    <input type="password" id="categoryImage" formControlName="password">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 23px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && Registration.get('password')?.invalid">Enter
+                                        the password</span>
+                                </div>
+
+                                <div class="form_singlerow">
+                                    <label for="categoryImage">Confirm Password: <span class="required">*</span></label>
+                                    <input type="password" id="categoryImage" formControlName="confirmpassword">
+                                </div>
+                                <div class="row align-items-start">
+                                    <span style="color: red;
+                                    text-align: center;
+                                    margin-left: 55px;
+                                    margin-top: -11px;"
+                                        *ngIf="formsubmited && Registration.get('confirmpassword')?.invalid || formsubmited && Registration.get('password')?.value !=Registration.get('confirmpassword')?.value">Enter
+                                        the Confirm password</span>
+                                </div>
+
+                                
+                            <button style="padding: 0px 6px; margin-left: 41%; width: 80px;margin-top: 20px"
+                                class="btn btn-primary" (click)="submit()">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+                               
+    </div>
+</div>
+</div>
+</div>
+

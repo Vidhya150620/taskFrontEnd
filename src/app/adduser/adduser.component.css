@@ -1,0 +1,42 @@
+
+
+
+
+.form_controller{
+    margin: auto;
+    max-width: 510px;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 22px 26px;
+    box-shadow: 0 0 2px 2px #86929d;
+    margin-top: 20px;
+  }
+  
+  
+  .form_controller{
+    margin-bottom: 10px;
+  }
+  .form_singlerow select{
+  width: 60%;
+  padding: 3px 11px;
+  background: white;
+  border-radius: 4px;
+  }
+  .form_singlerow input{
+  width: 60%;
+  
+  
+  }
+  .form_singlerow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  }
+  
+  
+  
+  .required {
+    color: red;
+  }
